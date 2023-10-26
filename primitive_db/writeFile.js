@@ -27,7 +27,7 @@ async function getUserByName(userName) {
         const data = await listUsers()
 
 
-        return data.filter(user => user.name === userName)
+        return data.filter(user => user.name.toLowerCase() === userName.toLowerCase())
 
     } catch (error) {
         console.log(error.message);
