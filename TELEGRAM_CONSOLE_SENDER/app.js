@@ -15,10 +15,10 @@ const bot = new TelegramBot("6792456329:AAHEtD-Ser1eOamOzAA_9VePijk2atqDWwM", { 
 
 async function botTelegram(options) {
     if (options.message !== undefined) {
-
         bot.sendMessage(802771051, options.message);
     }
     else if (options.photo) {
+
         bot.sendPhoto(802771051, options.photo);
     }
     else {
