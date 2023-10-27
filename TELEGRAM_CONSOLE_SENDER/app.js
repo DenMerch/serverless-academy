@@ -5,8 +5,8 @@ const { Command } = require("commander");
 const program = new Command();
 
 program
-    .option("-m --message <text>", "Send text")
-    .option("-p --photo <type>", "Send photo")
+    .option("--send-message --message <text>", "Send text")
+    .option("--send-photo --photo <text>", "Send photo")
 
 program.parse(process.argv);
 
@@ -15,13 +15,14 @@ const bot = new TelegramBot("6792456329:AAHEtD-Ser1eOamOzAA_9VePijk2atqDWwM", { 
 
 async function botTelegram(options) {
     if (options.message !== undefined) {
-        console.log(options.message);
+
         bot.sendMessage(802771051, options.message);
     }
     else if (options.photo) {
         bot.sendPhoto(802771051, options.photo);
     }
     else {
+        console.log(options);
         return console.log("Unknown action type!");
     }
 }
