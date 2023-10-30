@@ -35,7 +35,7 @@ async function botTelegram() {
         let text;
 
         if (action === '1') {
-            bot.sendMessage(802771051, "Сhoose intervals.", options2);
+            bot.sendMessage(802771051, "Choose intervals.", options2);
             bot.on('callback_query', async function onCallbackQuery(callbackQuery) {
                 const action = callbackQuery.data;
                 const msg = callbackQuery.message;
